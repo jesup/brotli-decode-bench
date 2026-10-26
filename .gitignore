@@ -1,0 +1,9 @@
+/c/build/
+/rust/target/
+/pgo/
+/streams/
+/corpus/web/
+/corpus/silesia/
+/third_party/brotli/
+/third_party/burli/
+/scripts/__pycache__/

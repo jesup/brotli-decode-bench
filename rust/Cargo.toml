@@ -1,0 +1,26 @@
+[package]
+name = "brotli-rust-decode-bench"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+burli = { path = "../third_party/burli" }
+brotli = "9.1.0"
+
+[[bin]]
+name = "burli-decode-bench"
+path = "src/bin/burli.rs"
+
+[[bin]]
+name = "rust-brotli-decode-bench"
+path = "src/bin/rust_brotli.rs"
+
+# Mirrors Firefox's gkrust release profile (Cargo.toml [profile.release] plus
+# the -Clto -Ccodegen-units=1 that config/makefiles/rust.mk adds).
+[profile.release]
+opt-level = 2
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+debug = false
